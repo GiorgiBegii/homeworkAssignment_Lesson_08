@@ -1,0 +1,98 @@
+$form-bg: #f5f7fa;
+$primary-color: #4f46e5; // nice indigo
+$error-color: #ef4444; // red for errors
+$input-border: #d1d5db;
+$input-focus: #4f46e5;
+$button-bg: $primary-color;
+$button-hover: darken($primary-color, 10%);
+$border-radius: 8px;
+
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: $form-bg;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #374151;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid $input-border;
+    border-radius: $border-radius;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      border-color: $input-focus;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+  }
+
+  small {
+    color: $error-color;
+    margin-top: 0.25rem;
+    display: block;
+    font-size: 0.85rem;
+  }
+
+  div {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: $border-radius;
+    background: $button-bg;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+
+    &:hover {
+      background: $button-hover;
+      transform: translateY(-1px);
+    }
+
+    &:disabled {
+      background: lighten($button-bg, 20%);
+      cursor: not-allowed;
+    }
+  }
+
+  [formArrayName] {
+    margin-bottom: 1rem;
+
+    input {
+      width: calc(100% - 80px);
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+
+    button {
+      width: 70px;
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      margin-top: 0;
+    }
+
+    > div + div {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .hobbiesLine {
+    display: flex;
+  }
+
+}
